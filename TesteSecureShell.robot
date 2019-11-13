@@ -21,7 +21,7 @@ Close SSH Connection
 Execute Command SSH
     [Timeout]               59 seconds
     Write                   ${DIR}ExecuteCommand.run
-    ${rup_rem1}=            Read Until Prompt
+    ${rup_command}=         Read Until Prompt
     ${read_output}=         Read
     Should Contain          ${read_output}    [K
     Should Not Contain      ${read_output}    ERROR
