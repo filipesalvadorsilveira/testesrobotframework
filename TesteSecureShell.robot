@@ -5,6 +5,9 @@ Suite Setup              Open Connection And Log In
 Suite Teardown           Close All Connections
 
 *** Variables ***
+${SSH_HOST}              server.ssh.com
+${SSH_USERNAME}          user.user
+${SSH_PASSWORD}          123456
 ${DIR}                   /home/usuario/executables/
 
 *** Keywords ***
@@ -15,7 +18,7 @@ Open SSH Connection And Log In
 Close SSH Connection
     Close Connection
 
-FILE_IMPORT: é importado o arquivo de remessa do cedente: ${dados_cedente} ${BANCO}
+Execute Command SSH
     [Timeout]                           59 seconds
     Write                               ${DIR}ExecuteCommand.run
     ${rup_rem1}=                        Read Until Prompt
