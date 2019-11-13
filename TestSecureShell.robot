@@ -10,6 +10,10 @@ ${SSH_USERNAME}             user.user
 ${SSH_PASSWORD}             123456
 ${DIR}                      /home/user/executables/
 
+*** Test Cases ***
+Simple Test with SSH
+    Execute Command SSH
+
 *** Keywords ***
 Open SSH Connection And Log In
     Open Connection         ${SSH_HOST}
@@ -26,4 +30,4 @@ Execute Command SSH
     Should Contain          ${read_output}    [K
     Should Not Contain      ${read_output}    ERROR
 
-[Teardown]  Close all connections
+[Teardown]	Close all connections
